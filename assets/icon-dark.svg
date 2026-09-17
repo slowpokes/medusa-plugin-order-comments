@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title description">
+  <title id="title">Medusa Order Comments dark icon</title>
+  <desc id="description">Two comment bubbles with an order check mark</desc>
+  <rect width="512" height="512" rx="112" fill="#18181B"/>
+  <path d="M112 132c0-30.9 25.1-56 56-56h176c30.9 0 56 25.1 56 56v116c0 30.9-25.1 56-56 56H224l-76 58v-58c-20.9-7.9-36-28.1-36-52V132Z" fill="#A78BFA"/>
+  <path d="M183 181h146M183 229h92" fill="none" stroke="#18181B" stroke-width="24" stroke-linecap="round"/>
+  <circle cx="352" cy="352" r="96" fill="#F4F4F5"/>
+  <path d="m307 353 29 29 62-70" fill="none" stroke="#5B21B6" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

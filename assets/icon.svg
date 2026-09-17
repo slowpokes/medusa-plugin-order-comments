@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title description">
+  <title id="title">Medusa Order Comments</title>
+  <desc id="description">Two comment bubbles with an order check mark</desc>
+  <defs>
+    <linearGradient id="background" x1="64" y1="48" x2="448" y2="464" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7C3AED"/>
+      <stop offset="1" stop-color="#4F46E5"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#background)"/>
+  <path d="M112 132c0-30.9 25.1-56 56-56h176c30.9 0 56 25.1 56 56v116c0 30.9-25.1 56-56 56H224l-76 58v-58c-20.9-7.9-36-28.1-36-52V132Z" fill="#fff"/>
+  <path d="M183 181h146M183 229h92" fill="none" stroke="#5B50E6" stroke-width="24" stroke-linecap="round"/>
+  <circle cx="352" cy="352" r="96" fill="#18181B"/>
+  <path d="m307 353 29 29 62-70" fill="none" stroke="#fff" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

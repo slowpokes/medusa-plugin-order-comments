@@ -1,0 +1,10 @@
+node_modules/
+.medusa/
+.cache/
+.env
+.env.*
+!.env.template
+*.tgz
+coverage/
+.yalc/
+yalc.lock
