@@ -1,6 +1,6 @@
 # Medusa Order Comments
 
-![Medusa Order Comments icon](./assets/icon.svg)
+<img src="./assets/icon.svg" alt="Medusa Order Comments icon" width="64">
 
 Add private, attributed comments to orders in the Medusa Admin. The plugin keeps
 the complete comment history next to the order and highlights the latest entry.
