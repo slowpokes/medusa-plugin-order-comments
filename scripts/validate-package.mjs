@@ -4,7 +4,6 @@ const packageJson = JSON.parse(
   await readFile(new URL("../package.json", import.meta.url), "utf8")
 )
 
-const serializedPackage = JSON.stringify(packageJson)
 const requiredKeywords = [
   "medusa-v2",
   "medusa-plugin-integration",

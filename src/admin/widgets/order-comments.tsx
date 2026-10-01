@@ -47,42 +47,47 @@ const CommentItem = ({
 }: {
   comment: OrderComment
   isLatest: boolean
-}) => (
-  <li className="flex flex-col gap-y-2 px-6 py-4">
-    <div className="flex items-start justify-between gap-x-3">
-      <div className="min-w-0">
-        <div className="flex items-center gap-x-2">
-          <Text size="small" weight="plus" className="truncate">
-            {getAuthorName(comment)}
-          </Text>
-          {isLatest && (
-            <Text size="xsmall" className="text-ui-fg-muted">
-              Latest
+}) => {
+  const authorName = getAuthorName(comment)
+  const createdAt = new Date(comment.created_at)
+
+  return (
+    <li className="flex flex-col gap-y-2 px-6 py-4">
+      <div className="flex items-start justify-between gap-x-3">
+        <div className="min-w-0">
+          <div className="flex items-center gap-x-2">
+            <Text size="small" weight="plus" className="truncate">
+              {authorName}
+            </Text>
+            {isLatest && (
+              <Text size="xsmall" className="text-ui-fg-muted">
+                Latest
+              </Text>
+            )}
+          </div>
+          {authorName !== comment.author_email && (
+            <Text size="xsmall" className="text-ui-fg-subtle truncate">
+              {comment.author_email}
             </Text>
           )}
         </div>
-        {getAuthorName(comment) !== comment.author_email && (
-          <Text size="xsmall" className="text-ui-fg-subtle truncate">
-            {comment.author_email}
-          </Text>
-        )}
+        <Text
+          size="xsmall"
+          className="text-ui-fg-muted shrink-0"
+          title={createdAt.toISOString()}
+        >
+          {new Intl.DateTimeFormat(undefined, {
+            dateStyle: "medium",
+            timeStyle: "short",
+          }).format(createdAt)}
+        </Text>
       </div>
-      <Text
-        size="xsmall"
-        className="text-ui-fg-muted shrink-0"
-        title={new Date(comment.created_at).toISOString()}
-      >
-        {new Intl.DateTimeFormat(undefined, {
-          dateStyle: "medium",
-          timeStyle: "short",
-        }).format(new Date(comment.created_at))}
+      <Text size="small" className="whitespace-pre-wrap break-words">
+        {comment.content}
       </Text>
-    </div>
-    <Text size="small" className="whitespace-pre-wrap break-words">
-      {comment.content}
-    </Text>
-  </li>
-)
+    </li>
+  )
+}
 
 const OrderCommentsWidget = ({
   data: order,
@@ -125,7 +130,8 @@ const OrderCommentsWidget = ({
 
     const trimmedContent = content.trim()
 
-    if (!trimmedContent) {
+    // The loading button is disabled, but the form can still submit via Enter.
+    if (!trimmedContent || createComment.isPending) {
       return
     }
 

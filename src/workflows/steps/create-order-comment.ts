@@ -19,6 +19,7 @@ export const createOrderCommentStep = createStep(
     return new StepResponse(comment, comment.id)
   },
   async (commentId, { container }) => {
+    // Compensate a later workflow failure by removing the created comment.
     if (!commentId) {
       return
     }

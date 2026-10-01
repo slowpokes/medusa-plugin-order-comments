@@ -1,6 +1,6 @@
 {
   "name": "medusa-plugin-order-comments",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "packageManager": "pnpm@10.11.1",
   "description": "Internal order comments with author attribution and history for the Medusa Admin.",
   "author": "Vadim <vadim.beglov@gmail.com>",
@@ -16,8 +16,7 @@
   "files": [
     ".medusa/server",
     "assets",
-    "CHANGELOG.md",
-    "RELEASING.md"
+    "CHANGELOG.md"
   ],
   "exports": {
     "./package.json": "./package.json",
@@ -45,8 +44,7 @@
     "node": ">=20"
   },
   "publishConfig": {
-    "access": "public",
-    "provenance": true
+    "access": "public"
   },
   "scripts": {
     "build": "medusa plugin:build",
